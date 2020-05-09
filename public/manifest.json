@@ -21,5 +21,18 @@
     "scripts": [
       "app/background.js"
     ]
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://reactjs.org/*"
+      ],
+      "css": [
+        "/static/css/content.css"
+      ],
+      "js": [
+        "/static/js/content.js"
+      ]
+    }
+  ]
 }
