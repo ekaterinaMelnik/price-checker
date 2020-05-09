@@ -1,28 +1,24 @@
-/*global chrome*/
+// /*global chrome*/
 import React, { Component } from 'react';
 import './App.css';
-import TrafficContainer from "./components/TrafficContainer";
-import { getCurrentTab } from "./common/Utils";
+// import { getCurrentTab } from "./common/Utils";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      traffic: {}
-    };
   }
 
-  componentDidMount() {
-    getCurrentTab((tab) => {
-      chrome.runtime.sendMessage({ type: 'popupInit', tabId: tab.id }, (response) => {
-        if (response) {
-          this.setState({
-            traffic: Object.assign(this.state.traffic, response)
-          });
-        }
-      });
-    });
-  }
+  // componentDidMount() {
+  //   getCurrentTab((tab) => {
+  //     chrome.runtime.sendMessage({ type: 'popupInit', tabId: tab.id }, (response) => {
+  //       if (response) {
+  //         this.setState({
+  //           traffic: Object.assign(this.state.traffic, response)
+  //         });
+  //       }
+  //     });
+  //   });
+  // }
 
   render() {
     return (
